@@ -12,7 +12,7 @@ public class StringAllUniqueWithoutDS {
 	public boolean checkerWithoutDS(String str) {
 		
 		
-		
+		String str2 = str.toLowerCase();
 		char[] ch = str.toCharArray();
 		Arrays.sort(ch);
 		 for(int i = 0; i <ch.length-1;i++){
@@ -26,7 +26,7 @@ public class StringAllUniqueWithoutDS {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		StringAllUniqueWithoutDS obj = new StringAllUniqueWithoutDS();
-		System.out.println(obj.checkerWithoutDS("jagvir"));
+		System.out.println(obj.checkerWithoutDS("HJjagvir"));
 		
 		
 	}
