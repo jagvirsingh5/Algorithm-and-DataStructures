@@ -43,7 +43,7 @@ public class MiddleElementLinkedList {
 	}
 
 	public int MiddleElementFinder(Node head) {
-		int lengthOfList = 0;
+		
 		Node slow = head;
 		Node fast = head;
 		if (fast.next == null) {
