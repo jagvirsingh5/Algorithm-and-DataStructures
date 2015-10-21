@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.HashMap;
-
+import java.util.Iterator;
 public class StringCompression {
 
 	/**
@@ -10,7 +10,8 @@ public class StringCompression {
 	 *            it should return "a3b3c3".
 	 */
 
-	public void StringCompressor(String str1) {
+	public String StringCompressor(String str1) {
+		String str2=new String();
 		String str = StringSorter(str1);
 		char[] ch = str.toCharArray();
 		HashMap<Character,Integer> hm = new HashMap<Character,Integer>();
@@ -23,6 +24,16 @@ public class StringCompression {
 				hm.put(ch[i], (hm.get(ch[i])+1));
 			}
 		}
+		Iterator it = hm.entrySet().iterator();
+		StringBuilder sb = new StringBuilder();
+		while(it.hasNext()){
+			HashMap.Entry pair = (HashMap.Entry)it.next();
+			 sb.append(pair.getKey()).append(pair.getValue());
+		}
+		str2 = sb.toString();
+		return str2;
+		
+		
 	}
 	
 	public String StringSorter(String str){
@@ -38,7 +49,8 @@ public class StringCompression {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		StringCompression obj = new StringCompression();
-		obj.StringCompressor("jagvir");
+		System.out.println(obj.StringCompressor("aaabbbccc"));
+		
 
 	}
 
