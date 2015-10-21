@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class matrixRotation {
 
 	/**
@@ -11,6 +13,7 @@ public class matrixRotation {
 	public void MatrixCreator(int row, int column) {
 		byte[][] matrix = new byte[row][column];
 		byte b = 0000;
+		 
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < column; j++) {
 				matrix[i][j] = b;
@@ -36,14 +39,15 @@ public class matrixRotation {
 		int counter = 0;
 		int row = matrix[0].length;
 		int col = matrix.length;
-		System.out.println("row  :- "+row+" col :- "+col);
+		System.out.println("row  :- " + row + " col :- " + col);
 		byte[][] matrix2 = new byte[row][col];
-		for (int i = 0; i < matrix.length; i++) {	
+		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[0].length; j++) {
-				matrix2[j][(col-1)-i] = matrix[i][j];
+				matrix2[j][(col - 1) - i] = matrix[i][j];
 			}
 			counter++;
-		}disp(matrix2);
+		}
+		disp(matrix2);
 	}
 
 	public static void main(String[] args) {
