@@ -1,6 +1,3 @@
-
-
-
 public class MiddleElementLinkedList {
 
 	/**
@@ -10,19 +7,20 @@ public class MiddleElementLinkedList {
 		Node next;
 		int data;
 	}
-	
 
 	public void disp(Node head) {
+		System.out.println("list is :- ");
 		Node c = head;
-		while (c.next != null) {
-			System.out.println(c.data + " ");
+		while (c != null) {
+			System.out.print(c.data + " ");
 			c = c.next;
 		}
+		System.out.println();
 	}
-	
-	public void LLCreator(int[] list) {
-		  Node head=null;
-		  Node temp=null;
+
+	public int LLCreator(int[] list) {
+		Node head = null;
+		Node temp = null;
 		for (int i = 0; i < list.length; i++) {
 			if (head == null) {
 				head = new Node();
@@ -39,12 +37,32 @@ public class MiddleElementLinkedList {
 			}
 
 		}
-	 
+
 		disp(head);
+		return MiddleElementFinder(head);
 	}
+
+	public int MiddleElementFinder(Node head) {
+		int lengthOfList = 0;
+		Node slow = head;
+		Node fast = head;
+		if (fast.next == null) {
+			System.out.println("Only one element in the linkedlist");
+		} else {
+			while (fast.next != null) {
+				slow= slow.next;
+				fast = fast.next.next;
+				}
+		}
+
+		return slow.data;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		MiddleElementLinkedList obj = new MiddleElementLinkedList();
+		int[] list = { 12, 11, 21, 41, 43,44 };
+		System.out.println("Middle element is :- " + obj.LLCreator(list));
 
 	}
 
