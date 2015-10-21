@@ -49,10 +49,12 @@ public class MiddleElementLinkedList {
 		if (fast.next == null) {
 			System.out.println("Only one element in the linkedlist");
 		} else {
-			while (fast.next != null) {
-				slow= slow.next;
+			while (fast != null && fast.next != null) {
+				System.out.println("slow is :- " + slow.data + "   fast is :- "
+						+ fast.data);
+				slow = slow.next;
 				fast = fast.next.next;
-				}
+			}
 		}
 
 		return slow.data;
@@ -61,7 +63,7 @@ public class MiddleElementLinkedList {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		MiddleElementLinkedList obj = new MiddleElementLinkedList();
-		int[] list = { 12, 11, 21, 41, 43,44 };
+		int[] list = { 12, 11, 21, 41, 43, 44, 87, 98 };
 		System.out.println("Middle element is :- " + obj.LLCreator(list));
 
 	}
