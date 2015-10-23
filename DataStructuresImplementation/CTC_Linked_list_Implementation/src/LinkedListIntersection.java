@@ -23,7 +23,7 @@ public class LinkedListIntersection {
 		System.out.println("length of list is :- " + length);
 	}
 
-	public boolean diffFinder(returnDetail list1, returnDetail list2) {
+	private boolean diffFinder(returnDetail list1, returnDetail list2) {
 		int lengthList1 = list1.length;
 		int lengthList2 = list2.length;
 		Node node1 = list1.returnNode;
@@ -94,12 +94,12 @@ public class LinkedListIntersection {
 		while (end2.next != null) {
 			end2 = end2.next;
 		}
-		// Node n = new Node();
-		// n.data = 9;
-		// end1.next = n;
-		// end2.next = n;
-		// ret1.length++;
-		// ret2.length++;
+		 Node n = new Node();
+		 n.data = 9;
+		 end1.next = n;
+		 end2.next = n;
+		 ret1.length++;
+		 ret2.length++;
 		// System.out.println(ret1.length + " " + ret2.length);
 		System.out.println(diffFinder(ret1, ret2));
 	}
