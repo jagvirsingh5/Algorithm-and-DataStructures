@@ -10,30 +10,73 @@ public class CircularLinkedList {
 	 *            detectAndRemoveLoop() must change the below list to
 	 *            1->2->3->4->5->NULL.
 	 */
-	
-	private class Node{
+
+	private class Node {
 		int data;
 		Node next;
 	}
-	
-	private Node llCreator(int[] list){
+
+	private void displayList(Node node) {
+		Node n = node;
+		while (n != null) {
+			System.out.println(n.data);
+			n = n.next;
+		}
+
+	}
+
+	private Node llCreator(int[] list) {
 		Node head = null;
-		Node counter= null;
-		for(int i = 0 ; i < list.length; i ++){
-			if(head == null){
+		Node counter = null;
+		for (int i = 0; i < list.length; i++) {
+			if (head == null) {
 				head = new Node();
 				counter = head;
 				counter.data = list[i];
-				
-			}
-			else{}
-		}
-		
-		return null;
-	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+			} else {
+				Node node = new Node();
+				node.data = list[i];
+				counter.next = node;
+				counter = counter.next;
+			}
+
+		}
+
+		return head;
+	}
+
+	private boolean loopFinder(Node node) {
+		Node slow = node;
+		Node fast = node.next;
+		while (fast.next != null) {
+			if (slow == fast) {
+				return true;
+			}
+			fast= fast.next.next;
+			slow=slow.next;
+		}
+		return false;
+	}
+
+	private void runner(int[] list) {
+		Node n = llCreator(list);
+		displayList(n);
+
+		while (n.next.next != null) {
+			n = n.next;
+		}
+		Node m = n.next;
+		m.next = n;
+//		displayList(n);
+		System.out.println("is there a loop formation :-          "+loopFinder(n));
+//		loopFinder(n);
+	}
+
+	public static void main(String[] args) {
+		CircularLinkedList obj = new CircularLinkedList();
+		int[] list = { 1, 2, 3, 4, 5 };
+		obj.runner(list);
 	}
 
 }
