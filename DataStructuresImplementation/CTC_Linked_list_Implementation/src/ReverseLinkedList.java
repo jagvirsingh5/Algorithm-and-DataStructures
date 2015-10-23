@@ -29,14 +29,12 @@ public class ReverseLinkedList {
 			} else {
 				Node n = new Node();
 				n.data = list[i];
-
 				temp.next = n;
-
 				temp = n;
 			}
 
 		}
-//		disp(head);
+		// disp(head);
 		disp(llReversor(head));
 
 	}
@@ -65,7 +63,7 @@ public class ReverseLinkedList {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ReverseLinkedList obj = new ReverseLinkedList();
-		int[] list = { 12, 11, 21, 41, 43, 21, 41, 43, 54, 34, 54, 34 ,98};
+		int[] list = { 12, 11, 21, 41, 43, 21, 41, 43, 54, 34, 54, 34, 98 };
 		obj.llCreator(list, 5);
 	}
 }
