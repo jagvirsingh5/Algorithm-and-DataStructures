@@ -18,12 +18,12 @@ public class StackImplementation<T> {
 
 	private void push(T data) {
 
-		Node<T> counter = null;
 		if (head == null) {
 			head = new Node<T>();
 			head.data = data;
 
 		} else {
+
 			Node<T> node = new Node<T>();
 			node.data = data;
 			node.next = head;
@@ -46,7 +46,7 @@ public class StackImplementation<T> {
 		return ret;
 	}
 
-	private T peek() {
+	private T getTop() {
 		if (isEmpty())
 			throw new NoSuchElementException("Underflow");
 
@@ -73,12 +73,13 @@ public class StackImplementation<T> {
 		obj.push(4);
 		obj.push(5);
 		obj.push(6);
-		obj.push(7);System.out.println("after first round of push");
+		obj.push(7);
+		System.out.println("after first round of push");
 		obj.displayStack();
 		obj.pop();
 		System.out.println("after pop");
 		obj.displayStack();
-		System.out.println("top of Stack is :- "+obj.peek());
+		System.out.println("top of Stack is :- " + obj.getTop());
 		System.out.println(obj.isEmpty());
 
 	}
