@@ -17,7 +17,7 @@ public class DeleteGivenNode {
 		System.out.println();
 	}
 
-	public void LLCreator(int[] list, int nodePositionToBeDeleted) {
+	public void llCreator(int[] list, int nodePositionToBeDeleted) {
 		Node head = null;
 		Node temp = null;
 		for (int i = 0; i < list.length; i++) {
@@ -42,11 +42,11 @@ public class DeleteGivenNode {
 			nodeToDelete = nodeToDelete.next;
 			nodePositionToBeDeleted--;
 		}
-		DeleteNode(nodeToDelete);
+		deleteNode(nodeToDelete);
 		disp(head);
 	}
 
-	public void DeleteNode(Node n) {
+	public void deleteNode(Node n) {
 		//
 
 		Node nextNode = n.next;
@@ -58,7 +58,7 @@ public class DeleteGivenNode {
 		// TODO Auto-generated method stub
 		DeleteGivenNode obj = new DeleteGivenNode();
 		int[] list = { 12, 11, 21, 41, 43, 21, 41, 43, 54, 34, 54, 34 };
-		obj.LLCreator(list, 5);
+		obj.llCreator(list, 5);
 
 	}
 

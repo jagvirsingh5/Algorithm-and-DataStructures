@@ -27,7 +27,7 @@ public class RemoveDuplicate {
 		}
 	}
 
-	public void LLCreator(int[] list) {
+	public void llCreator(int[] list) {
 		  Node head=null;
 		  Node temp=null;
 		for (int i = 0; i < list.length; i++) {
@@ -47,11 +47,11 @@ public class RemoveDuplicate {
 
 		}
 		// disp();
-		DuplicateRemover(head);
+		duplicateRemover(head);
 		disp(head);
 	}
 
-	public void DuplicateRemover(Node head) {
+	public void duplicateRemover(Node head) {
 		Node prev = null, foll = head;
 		// System.out.println(head);
 		// System.out.println(foll);
@@ -78,8 +78,8 @@ public class RemoveDuplicate {
 		int[] list2 = { 12 };
 		int[] list = { 12, 11, 21, 41, 43, 21, 41, 43, 54, 34, 54, 34 };
 		RemoveDuplicate rm = new RemoveDuplicate();
-		 rm.LLCreator(list);
-		rm.LLCreator(list2);
+		 rm.llCreator(list);
+		rm.llCreator(list2);
 	}
 
 }

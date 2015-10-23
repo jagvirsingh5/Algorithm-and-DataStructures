@@ -18,7 +18,7 @@ public class LinkedListPalindrome {
 		System.out.println();
 	}
 
-	public Node LLCreator(int[] list) {
+	public Node llCreator(int[] list) {
 		Node head = null;
 		Node temp = null;
 		for (int i = 0; i < list.length; i++) {
@@ -41,7 +41,7 @@ public class LinkedListPalindrome {
 		return head;
 	}
 
-	public Node LLReversor(Node head) {
+	public Node llReversor(Node head) {
 		Node slow = head;
 		Node fast = head.next;
 		Node temp = null;
@@ -62,9 +62,9 @@ public class LinkedListPalindrome {
 
 	}
 
-	public boolean PalindromChecker(int[] list) {
-		Node firstList = LLCreator(list);
-		Node secondList = LLReversor(firstList);
+	public boolean palindromChecker(int[] list) {
+		Node firstList = llCreator(list);
+		Node secondList = llReversor(firstList);
 		while (firstList != null && secondList != null) {
 			
 			if (firstList.data != secondList.data) {
@@ -82,7 +82,7 @@ public class LinkedListPalindrome {
 		// TODO Auto-generated method stub
 		LinkedListPalindrome obj = new LinkedListPalindrome();
 		int[] list = { 1, 2, 3, 4, 3, 2, 1 };
-		System.out.println(obj.PalindromChecker(list));
+		System.out.println(obj.palindromChecker(list));
 	}
 
 }

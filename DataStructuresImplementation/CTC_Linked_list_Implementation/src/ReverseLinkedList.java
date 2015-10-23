@@ -17,7 +17,7 @@ public class ReverseLinkedList {
 		System.out.println();
 	}
 
-	public void LLCreator(int[] list, int nodePositionToBeDeleted) {
+	public void llCreator(int[] list, int nodePositionToBeDeleted) {
 		Node head = null;
 		Node temp = null;
 		for (int i = 0; i < list.length; i++) {
@@ -37,11 +37,11 @@ public class ReverseLinkedList {
 
 		}
 //		disp(head);
-		disp(LLReversor(head));
+		disp(llReversor(head));
 
 	}
 
-	public Node LLReversor(Node head) {
+	public Node llReversor(Node head) {
 		Node slow = head;
 		Node fast = head.next;
 		Node temp = null;
@@ -66,6 +66,6 @@ public class ReverseLinkedList {
 		// TODO Auto-generated method stub
 		ReverseLinkedList obj = new ReverseLinkedList();
 		int[] list = { 12, 11, 21, 41, 43, 21, 41, 43, 54, 34, 54, 34 ,98};
-		obj.LLCreator(list, 5);
+		obj.llCreator(list, 5);
 	}
 }

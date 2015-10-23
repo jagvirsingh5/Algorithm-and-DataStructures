@@ -9,8 +9,7 @@ public class MiddleElementLinkedList {
 	}
 
 	public void disp(Node head) {
-		System.out.println("list is :- ");
-		Node c = head;
+				Node c = head;
 		while (c != null) {
 			System.out.print(c.data + " ");
 			c = c.next;
@@ -18,7 +17,7 @@ public class MiddleElementLinkedList {
 		System.out.println();
 	}
 
-	public int LLCreator(int[] list) {
+	public int llCreator(int[] list) {
 		Node head = null;
 		Node temp = null;
 		for (int i = 0; i < list.length; i++) {
@@ -39,10 +38,10 @@ public class MiddleElementLinkedList {
 		}
 
 		disp(head);
-		return MiddleElementFinder(head);
+		return middleElementFinder(head);
 	}
 
-	public int MiddleElementFinder(Node head) {
+	public int middleElementFinder(Node head) {
 		
 		Node slow = head;
 		Node fast = head;
@@ -64,7 +63,7 @@ public class MiddleElementLinkedList {
 		// TODO Auto-generated method stub
 		MiddleElementLinkedList obj = new MiddleElementLinkedList();
 		int[] list = { 12, 11, 21, 41, 43, 44, 87, 98 };
-		System.out.println("Middle element is :- " + obj.LLCreator(list));
+		System.out.println("Middle element is :- " + obj.llCreator(list));
 
 	}
 

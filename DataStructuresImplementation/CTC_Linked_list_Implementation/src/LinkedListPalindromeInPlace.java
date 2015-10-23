@@ -13,7 +13,7 @@ public class LinkedListPalindromeInPlace {
 		System.out.println();
 	}
 
-	public Node ListCreator(int[] list) {
+	public Node listCreator(int[] list) {
 		Node head = null;
 		Node counter = null;
 		for (int i = 0; i < list.length; i++) {
@@ -36,7 +36,7 @@ public class LinkedListPalindromeInPlace {
 
 	}
 
-	public Node LLMiddleFinder(Node node) {
+	public Node llMiddleFinder(Node node) {
 
 		if (node == null || node.next == null) {
 			return null;
@@ -55,7 +55,7 @@ public class LinkedListPalindromeInPlace {
 
 	}
 
-	public Node LLReversor(Node node) {
+	public Node llReversor(Node node) {
 		Node rear = node;
 		Node front = node.next;
 		Node temp = null;
@@ -70,9 +70,9 @@ public class LinkedListPalindromeInPlace {
 		return rear;
 	}
 
-	public boolean NewListCreator(int[] list) {
-		Node head = ListCreator(list);
-		Node rev = LLReversor(LLMiddleFinder(head));
+	public boolean newlistCreator(int[] list) {
+		Node head = listCreator(list);
+		Node rev = llReversor(llMiddleFinder(head));
 		Node end = head;
 		while (end.next != null) {
 			end = end.next;
@@ -94,9 +94,9 @@ public class LinkedListPalindromeInPlace {
 	public static void main(String[] args) {
 		LinkedListPalindromeInPlace obj = new LinkedListPalindromeInPlace();
 		int[] list = { 1, 2, 3,4,5,4,3, 2, 1 };
-		System.out.println(obj.NewListCreator(list));
+		System.out.println(obj.newlistCreator(list));
 		int[] list2 = { 1, 2, 3,4,5,44,3, 2, 1 };
-		System.out.println(obj.NewListCreator(list2));
+		System.out.println(obj.newlistCreator(list2));
 		
 	}
 }
