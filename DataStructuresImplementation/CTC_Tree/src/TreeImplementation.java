@@ -3,6 +3,8 @@ public class TreeImplementation {
 	/**
 	 * @param args
 	 */
+	 
+	 int x = 0;
 	private class Node {
 		Node leftNode;
 		Node rightNode;
