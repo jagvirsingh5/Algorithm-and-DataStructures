@@ -5,6 +5,8 @@ public class TreeImplementation {
 	 */
 	 
 	 int x = 0;
+	 int y = 0;
+	 
 	private class Node {
 		Node leftNode;
 		Node rightNode;
