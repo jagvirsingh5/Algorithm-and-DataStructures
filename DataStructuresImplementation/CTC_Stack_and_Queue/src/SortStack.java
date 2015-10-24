@@ -1,34 +1,57 @@
 import java.util.Stack;
 import java.util.Iterator;
 
-public class SortStack<T> {
+public class SortStack {
 
 	/**
 	 * @param args
 	 */
-	private void sortStack(Stack stk) {
+
+	public void insert(Stack<Integer> stack, int data) {
+		if (stack.isEmpty()) {
+			stack.push(data);
+
+		} else {
+			int x = stack.pop();
+			if (data > x) {
+				insert(stack, x);
+			} else {
+				stack.push(data);
+			}
+		}
+	}
+
+	public Stack meth(Stack<Integer> stack, int data) {
+		insert(stack, data);
+		return stack;
+	}
+
+	public void sortStack(Stack<Integer> stack) {
+		if (stack.isEmpty()) {
+			return;
+		}
+		int data = stack.pop();
 
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Stack<Integer> stk = new Stack<Integer>();
-
-		stk.push(7);
-		stk.push(9);
-		stk.push(10);
-		stk.push(11);
-		stk.push(456);
-		stk.push(3);
-		stk.push(1340);
-		stk.push(9);
-		stk.push(43);
-		stk.push(15);
-		stk.push(96);
-
-		Iterator it = stk.iterator();
+		Stack<Integer> stack = new Stack<Integer>();
+		SortStack obj = new SortStack();
+		for (int i = 0; i < 10; i++) {
+			stack.push((int) (Math.random() * 10));
+		}
+		System.out.println("original stack");
+		Iterator it = stack.iterator();
 		while (it.hasNext()) {
-			System.out.println(it.next());
+			System.out.print(it.next() + " ");
+		}
+		System.out.println();
+
+		Stack stk = obj.meth(stack, 8);
+		System.out.println("sorted stack");
+		Iterator it2 = stk.iterator();
+		while (it2.hasNext()) {
+			System.out.print(it2.next() + " ");
 		}
 	}
 
