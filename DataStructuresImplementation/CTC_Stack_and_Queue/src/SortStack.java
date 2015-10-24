@@ -10,19 +10,23 @@ public class SortStack {
 	public void insert(Stack<Integer> stack, int data) {
 		if (stack.isEmpty()) {
 			stack.push(data);
+			return;
 
 		} else {
-			int x = stack.pop();
-			if (data > x) {
-				insert(stack, x);
+			if (data > stack.peek()) {
+				int topElement = stack.pop();
+				insert(stack, data);
+				stack.push(topElement);
 			} else {
 				stack.push(data);
 			}
+
 		}
 	}
 
 	public Stack meth(Stack<Integer> stack, int data) {
-		insert(stack, data);
+		 sortStack(stack);
+//		insert(stack, data);
 		return stack;
 	}
 
@@ -31,6 +35,8 @@ public class SortStack {
 			return;
 		}
 		int data = stack.pop();
+		sortStack(stack);
+		insert(stack, data);
 
 	}
 
@@ -38,7 +44,7 @@ public class SortStack {
 		Stack<Integer> stack = new Stack<Integer>();
 		SortStack obj = new SortStack();
 		for (int i = 0; i < 10; i++) {
-			stack.push((int) (Math.random() * 10));
+			stack.push(((int) (Math.random() * 10)) + 1);
 		}
 		System.out.println("original stack");
 		Iterator it = stack.iterator();
@@ -47,7 +53,7 @@ public class SortStack {
 		}
 		System.out.println();
 
-		Stack stk = obj.meth(stack, 8);
+		Stack stk = obj.meth(stack, 1);
 		System.out.println("sorted stack");
 		Iterator it2 = stk.iterator();
 		while (it2.hasNext()) {
