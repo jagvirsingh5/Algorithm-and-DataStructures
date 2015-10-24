@@ -9,6 +9,7 @@ public class TreeImplementation {
 		int data;
 	}
 int z= 0;
+int x= 0;
 	private void insert(Node node, int data) {
 		if (node == null) {
 			node = new Node();
