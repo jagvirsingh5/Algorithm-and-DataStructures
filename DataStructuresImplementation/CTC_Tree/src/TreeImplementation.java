@@ -8,8 +8,11 @@ public class TreeImplementation {
 		Node rightNode;
 		int data;
 	}
-int z= 0;
-int x= 0;
+
+	int z = 0;
+	int x = 0;
+	int y = 0;
+
 	private void insert(Node node, int data) {
 		if (node == null) {
 			node = new Node();
