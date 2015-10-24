@@ -11,7 +11,7 @@ public class TreeImplementation {
 
 	int z = 0;
 	int x = 0;
-	int y = 0;int a=1;
+	int y = 0;int a=2;
 
 	private void insert(Node node, int data) {
 		if (node == null) {
