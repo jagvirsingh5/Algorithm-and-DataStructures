@@ -4,46 +4,31 @@ public class TreeImplementation {
 	 * @param args
 	 */
 	private class Node {
-		Node leftNode;
 		Node rightNode;
+		Node leftNode;
 		int data;
 	}
 
-	int z = 0;
-	int x = 0;
-	int y = 0;int a=2;
+	Node root;
 
-	private void insert(Node node, int data) {
-		if (node == null) {
-			node = new Node();
-			node.data = data;
-		} else {
-			if (data < node.data) {
-				insert(node.leftNode, data);
-
-			} else {
-				insert(node.rightNode, data);
-			}
-		}
+	public TreeImplementation() {
+		root = null;
 	}
 
-	private boolean lookup(Node node, int data) {
-		if (node == null) {
-			return false;
+	private void insert(int data) {
+		if (root == null) {
+			root = new Node();
+			root.data = data;
 		}
-		if (data == node.data) {
-			return true;
-		}
-		if (data < node.data) {
-			lookup(node.leftNode, data);
-		} else {
-			lookup(node.rightNode, data);
-		}
-		return false;
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		TreeImplementation obj = new TreeImplementation();
+		int[] arr = new int[10];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = ((int) (Math.random() * 10));
+		}
 
 	}
 
