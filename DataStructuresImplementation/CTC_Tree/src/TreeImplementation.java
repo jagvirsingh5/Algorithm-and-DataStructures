@@ -10,6 +10,7 @@ public class TreeImplementation {
 	}
 
 	Node root;
+	Node counter;
 
 	public TreeImplementation() {
 		root = null;
@@ -19,6 +20,19 @@ public class TreeImplementation {
 		if (root == null) {
 			root = new Node();
 			root.data = data;
+			counter = root;
+		} else {
+			if (data < counter.data && counter.leftNode == null) {
+				Node node = new Node();
+				node.data = data;
+				counter.leftNode = node;
+
+			}
+			if (data > counter.data && counter.rightNode == null) {
+				Node node = new Node();
+				node.data = data;
+				counter.rightNode = node;
+			}
 		}
 	}
 

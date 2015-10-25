@@ -46,7 +46,7 @@ public class SortStack {
 		for (int i = 0; i < 10; i++) {
 			stack.push(((int) (Math.random() * 10)) + 1);
 		}
-		System.out.println("Sharan ka Asli Stack :- ");
+		System.out.println("Original Stack ");
 		Iterator it = stack.iterator();
 		while (it.hasNext()) {
 			System.out.print(it.next() + " ");
@@ -54,7 +54,7 @@ public class SortStack {
 		System.out.println();
 
 		Stack stk = obj.meth(stack, 1);
-		System.out.println("Sharan ka suljhaya hua Stack");
+		System.out.println("Sorted Stack");
 		Iterator it2 = stk.iterator();
 		while (it2.hasNext()) {
 			System.out.print(it2.next() + " ");
