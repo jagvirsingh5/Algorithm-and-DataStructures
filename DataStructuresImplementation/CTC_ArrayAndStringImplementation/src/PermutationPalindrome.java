@@ -26,7 +26,6 @@ public class PermutationPalindrome {
 				hm.put(c, value);
 			}
 
-			
 		}
 		/**
 		 * @param str
