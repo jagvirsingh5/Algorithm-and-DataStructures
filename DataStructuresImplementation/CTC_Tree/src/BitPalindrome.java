@@ -31,6 +31,10 @@ public class BitPalindrome {
 		return true;
 	}
 
+	private  float isPalindrome(float x) {
+		return x;
+	}
+
 	private boolean isPalindromeBitManipulator(int data) {
 		int temp = data;
 		int rev = 0;
@@ -61,6 +65,8 @@ public class BitPalindrome {
 	public static void main(String[] args) {
 
 		BitPalindrome obj = new BitPalindrome();
+		float x = 1;
+		System.out.println(obj.isPalindrome(x));
 		long starttime = System.currentTimeMillis();
 		System.out.println(obj.isPalindrome(10));
 		long endtime = System.currentTimeMillis();
@@ -69,6 +75,7 @@ public class BitPalindrome {
 		System.out.println(obj.isPalindromeBitManipulator(165));
 		endtime = System.currentTimeMillis();
 		System.out.println(endtime - starttime);
-		System.out.println("no of set digit in "+165+" is :- "+obj.setBitFinder(165));
+		System.out.println("no of set digit in " + 165 + " is :- "
+				+ obj.setBitFinder(165));
 	}
 }
