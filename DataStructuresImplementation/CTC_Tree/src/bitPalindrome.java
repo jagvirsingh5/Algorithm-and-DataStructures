@@ -1,4 +1,4 @@
-public class bitPalindrome {
+public class BitPalindrome {
 
 	/**
 	 * @param args
@@ -60,7 +60,7 @@ public class bitPalindrome {
 
 	public static void main(String[] args) {
 
-		bitPalindrome obj = new bitPalindrome();
+		BitPalindrome obj = new BitPalindrome();
 		long starttime = System.currentTimeMillis();
 		System.out.println(obj.isPalindrome(10));
 		long endtime = System.currentTimeMillis();
