@@ -7,7 +7,7 @@ public class TreeImplementationMethodOverloading {
 	 * @param args
 	 */
 
-	private class Node {
+	public class Node {
 		Node rightNode;
 		Node leftNode;
 		int data;
@@ -28,10 +28,11 @@ public class TreeImplementationMethodOverloading {
 		root = null;
 	}
 
-	private void insertNode(int data) {
+	private Node insertNode(int data) {
 
 		root = insertNode(root, data);
-
+		System.out.println("root "+root);
+		return root;
 	}
 
 	private Node insertNode(Node node, int data) {
@@ -74,9 +75,11 @@ public class TreeImplementationMethodOverloading {
 		obj.insertNode(1);
 		obj.insertNode(8);
 		obj.insertNode(4);
-		obj.insertNode(13);
-		obj.insertNode(2);
-		obj.printTree();
+		Node node = obj.insertNode(13);
+		Node node2 = obj.insertNode(2);
+		System.out.println("root "+node);
+		System.out.println("root "+node2);
+//		obj.printTree();
 	}
 
 }
