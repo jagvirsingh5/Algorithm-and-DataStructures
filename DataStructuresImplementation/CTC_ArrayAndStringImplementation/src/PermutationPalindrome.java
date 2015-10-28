@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
+import java.util.Arrays;
 public class PermutationPalindrome {
 
 	/**
@@ -58,6 +58,7 @@ public class PermutationPalindrome {
 		int sumOfOddNumbers = 0;
 		for (Map.Entry<Character, Integer> entry : hashmap.entrySet()) {
 			int i = entry.getValue() % 2;
+			int j = entry.getKey();
 			if (i != 0) {
 				sumOfOddNumbers++;
 			}
@@ -70,6 +71,12 @@ public class PermutationPalindrome {
 	}
 
 	public static void main(String[] args) {
+		
+		int[] x = {2,4,56,1,4,6,9,3,1};
+		Arrays.sort(x);
+		for(int a : x){
+			System.out.println(a);
+		}
 		// TODO Auto-generated method stub
 		PermutationPalindrome pp = new PermutationPalindrome();
 		System.out.println("civic is " + pp.PermutationCalculator("civic")
