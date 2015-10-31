@@ -17,6 +17,7 @@ public class StackImplementationUsingTwoArray {
 	}
 
 	public void peek() {
+		System.out.println();
 
 	}
 
