@@ -22,21 +22,10 @@ public class Anagram {
 			arr[asciiValue]++;
 		}
 
-		for (int i = 0; i <= arr.length - 1; i++) {
-			System.out.print(arr[i] + " ");
-		}
-		System.out.println();
-
 		for (int i = 0; i <= str2.length() - 1; i++) {
 			char ch = str2.toLowerCase().charAt(i);
 			int asciiValue2 = ((int) ch) - 97;
 			arr[asciiValue2]--;
-		}
-		for (int i = 0; i <= arr.length - 1; i++) {
-			System.out.print(arr[i] + " ");
-		}
-		System.out.println();
-		for (int i = 0; i <= arr.length - 1; i++) {
 			if (arr[i] != 0) {
 				return false;
 			}
@@ -47,6 +36,6 @@ public class Anagram {
 	public static void main(String args[]) {
 
 		Anagram obj = new Anagram();
-		System.out.println(obj.anagramMatcher("jagvir", "wirGaj"));
+		System.out.println(obj.anagramMatcher("jagvir", "jagwir"));
 	}
 }
