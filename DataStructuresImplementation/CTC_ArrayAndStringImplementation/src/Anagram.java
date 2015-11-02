@@ -11,40 +11,42 @@ import java.util.Map.Entry;
 
 //Your submission should *ONLY* use the following class name
 public class Anagram {
-	// ///////////creating a Hashmap and putting values in it and retrieving
-	// valsues from it.'/////////////////
-	// ////anagram.////// amazon aamozn
 
-	public static void main(String args[]) {
-		Map<Character, Integer> map = new HashMap<Character,Integer>();
-		boolean isMatch = false;
-		int count = 1;
-		String str = "stephens";
-		String str2 = "hensstep";
-		for (int i = 0; i < str.length(); i++) {
-				char a = str.charAt(i);
-				if(map.containsKey(a)){
-					map.put(a, map.get(a)+1);
-				}
-				else{map.put(a, count);}
+	public boolean anagramMatcher(String str1, String str2) {
+		if (str1.length() != str2.length())
+			return false;
+		int[] arr = new int[26];
+		char[] chArray = str1.toLowerCase().toCharArray();
+		for (int i = 0; i <= chArray.length - 1; i++) {
+			int asciiValue = ((int) chArray[i]) - 97;
+			arr[asciiValue]++;
 		}
-		for (Entry<Character, Integer> map1: map.entrySet()) {
-			System.out.println(map1.getKey()+" "+map1.getValue());
+
+		for (int i = 0; i <= arr.length - 1; i++) {
+			System.out.print(arr[i] + " ");
 		}
-		for (int i = 0; i < str2.length(); i++) {
-			char b = str2.charAt(i);
-			if (map.containsKey(b)) {
-				isMatch = true;
-			} else {
-				isMatch = false;
-				break;
+		System.out.println();
+
+		for (int i = 0; i <= str2.length() - 1; i++) {
+			char ch = str2.toLowerCase().charAt(i);
+			int asciiValue2 = ((int) ch) - 97;
+			arr[asciiValue2]--;
+		}
+		for (int i = 0; i <= arr.length - 1; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+		for (int i = 0; i <= arr.length - 1; i++) {
+			if (arr[i] != 0) {
+				return false;
 			}
 		}
-		if(isMatch == false ){
-			System.out.println("no match");
-		}
-		else{
-			System.out.println("anagram");
-		}
+		return true;
+	}
+
+	public static void main(String args[]) {
+
+		Anagram obj = new Anagram();
+		System.out.println(obj.anagramMatcher("jagvir", "wirGaj"));
 	}
 }
