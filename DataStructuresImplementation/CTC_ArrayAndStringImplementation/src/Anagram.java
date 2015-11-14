@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 
 //Your submission should *ONLY* use the following class name
 public class Anagram {
+	int test = 0;
 
 	public boolean anagramMatcher(String str1, String str2) {
 		if (str1.length() != str2.length())
